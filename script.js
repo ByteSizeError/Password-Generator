@@ -21,12 +21,16 @@ function generatePassword() {
   }
   
   // lowercase
-  var lowercase = confirm("Yes or no for lowercase in password?"); 
+  var lowercase = confirm("Yes for lowercase in password?"); 
   
   // uppercase
-  var uppercase = confirm("Yes or no for uppercase in password?");; 
-  var numerica = false; // numerica
-  var special = false; // special character
+  var uppercase = confirm("Yes for uppercase in password?"); 
+  
+  // numerica
+  var numerica = confirm("Yes for numerica in password?"); 
+  
+  // special character
+  var special = confirm("Yes for special character in password?"); 
 
 
   return "password";
