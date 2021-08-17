@@ -12,11 +12,20 @@ function writePassword() {
 
 function generatePassword() {
   // password criterias
-  var length = 0; // password length 8 - 128
-  var lowercase = false; // lowercase
+  
+  // password length 8 - 128
+  var length = prompt("Enter a password length: 8 - 128"); 
+  while (!/^[0-9]+$/.test(length) || length > 128 || length < 8) {
+    alert("Please enter a number between 8 - 128");
+    length = prompt("Enter a password length: 8 - 128");
+  }
+  
+  // lowercase
+  var lowercase = false; 
   var uppercase = false; // uppercase
   var numerica = false; // numerica
   var special = false; // special character
+
 
   return "password";
 }
