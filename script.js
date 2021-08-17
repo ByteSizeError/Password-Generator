@@ -26,14 +26,48 @@ function generatePassword() {
   // uppercase
   var uppercase = confirm("Yes for uppercase in password?"); 
   
-  // numerica
-  var numerica = confirm("Yes for numerica in password?"); 
+  // numeric
+  var numeric = confirm("Yes for numeric in password?"); 
   
   // special character
   var special = confirm("Yes for special character in password?"); 
 
+  // checking criteria values
+  console.log("length:", length);
+  console.log("lowercase:", lowercase)
+  console.log("uppercase:", uppercase)
+  console.log("numeric:", numeric)
+  console.log("special:", special)
 
-  return "password";
+  const lowers = "abcdefghijklmnopqrstuvwxyz";
+  const uppers = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const numbers = "1234567890";
+  const specials = " !\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~";
+
+  var password = "";
+  let criteria = "";
+
+  if (lowercase) {
+    criteria += lowers;
+  }
+
+  if (uppercase) {
+    criteria += uppers;
+  }
+
+  if (numeric) {
+    criteria += numbers;
+  }
+  
+  if (special) {
+    criteria += specials;
+  }
+
+  for (let i = 0; i < length; i++) {
+    password += criteria[Math.floor(Math.random() * criteria.length)];
+  }
+
+  return password;
 }
 
 // Add event listener to generate button
