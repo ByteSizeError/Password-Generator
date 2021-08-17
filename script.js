@@ -14,23 +14,34 @@ function generatePassword() {
   // password criterias
 
   // password length 8 - 128
-  var length = prompt("Enter a password length: 8 - 128"); 
+  var length = prompt("Enter a password length: 8 - 128");
+
+  // makes sure the value entered is between 8 - 128 and also a number
   while (!/^[0-9]+$/.test(length) || length > 128 || length < 8) {
     alert("Please enter a number between 8 - 128");
     length = prompt("Enter a password length: 8 - 128");
   }
-  
+
   // lowercase
-  var lowercase = confirm("Yes for lowercase in password?"); 
-  
+  var lowercase = confirm("Yes for lowercase in password?");
+
   // uppercase
-  var uppercase = confirm("Yes for uppercase in password?"); 
-  
+  var uppercase = confirm("Yes for uppercase in password?");
+
   // numeric
-  var numeric = confirm("Yes for numeric in password?"); 
-  
+  var numeric = confirm("Yes for numeric in password?");
+
   // special character
-  var special = confirm("Yes for special character in password?"); 
+  var special = confirm("Yes for special character in password?");
+
+  // checks to make sure one character type is selected
+  while (!lowercase && !uppercase && !numeric && !special) {
+    alert("Please select at least one character type");
+    var lowercase = confirm("Yes for lowercase in password?");
+    var uppercase = confirm("Yes for uppercase in password?");
+    var numeric = confirm("Yes for numeric in password?");
+    var special = confirm("Yes for special character in password?");
+  }
 
   // checking criteria values
   console.log("length:", length);
@@ -58,7 +69,7 @@ function generatePassword() {
   if (numeric) {
     criteria += numbers;
   }
-  
+
   if (special) {
     criteria += specials;
   }
