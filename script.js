@@ -12,7 +12,7 @@ function writePassword() {
 
 function generatePassword() {
   // password criterias
-  
+
   // password length 8 - 128
   var length = prompt("Enter a password length: 8 - 128"); 
   while (!/^[0-9]+$/.test(length) || length > 128 || length < 8) {
@@ -21,8 +21,10 @@ function generatePassword() {
   }
   
   // lowercase
-  var lowercase = false; 
-  var uppercase = false; // uppercase
+  var lowercase = confirm("Yes or no for lowercase in password?"); 
+  
+  // uppercase
+  var uppercase = confirm("Yes or no for uppercase in password?");; 
   var numerica = false; // numerica
   var special = false; // special character
 
