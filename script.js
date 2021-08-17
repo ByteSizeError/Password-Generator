@@ -11,6 +11,13 @@ function writePassword() {
 }
 
 function generatePassword() {
+  // password criterias
+  var length = 0; // password length 8 - 128
+  var lowercase = false; // lowercase
+  var uppercase = false; // uppercase
+  var numerica = false; // numerica
+  var special = false; // special character
+
   return "password";
 }
 
