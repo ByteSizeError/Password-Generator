@@ -56,7 +56,7 @@ function generatePassword() {
   const specials = " !\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~";
 
   var password = "";
-  let criteria = "";
+  var criteria = "";
 
   if (lowercase) {
     criteria += lowers;
